@@ -9,7 +9,8 @@ export async function POST(request: Request) {
 
 	if (deletedItems.length > 0) {
 		deletedItems.forEach(filepath => {
-			fs.unlink(filepath, err => {
+			const path = filepath.substring(1)
+			fs.unlink(path, err => {
 				if (err) {
 					console.error(err)
 				}

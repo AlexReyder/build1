@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
 	if (deletedItems.length > 0) {
 		deletedItems.forEach(filepath => {
-			fs.unlink('public/' + filepath, err => {
+			fs.unlink(filepath.substring(1), err => {
 				if (err) {
 					console.error(err)
 				}

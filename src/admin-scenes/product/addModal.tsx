@@ -148,7 +148,7 @@ const AddingPalettesModal = ({
 		}
 
 		let formData = new FormData()
-		formData.append('path', `public/img/products/${productType}/${productName}`)
+		formData.append('path', `upload/products/${productType}/${productName}`)
 		axios
 			.post('/api/admin/cancelAddingNewProduct', formData, {
 				headers: {
@@ -179,15 +179,11 @@ const AddingPalettesModal = ({
 			let formData = new FormData()
 			const deleted = deletedImages as unknown as string | Blob
 			formData.append('delete', JSON.stringify(deleted))
-			await axios
-				.post('/api/admin/removeFiles', formData, {
-					headers: {
-						'Content-Type': 'multipart/form-data',
-					},
-				})
-				.then(() => {
-					handleClose()
-				})
+			await axios.post('/api/admin/removeFiles', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
 		}
 
 		const data = {

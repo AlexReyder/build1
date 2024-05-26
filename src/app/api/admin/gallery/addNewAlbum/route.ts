@@ -7,9 +7,15 @@ export async function POST(request: Request) {
 	const newAlbum = JSON.parse(res)
 
 	const newImages = newAlbum.images.map((orig: string, i: number) => {
-		const newPath = orig.split('/').slice(0, -1).join('/') + `/${++i}.jpg`
-		fs.renameSync('public' + orig, 'public' + newPath)
-		return newPath
+		const oldPath = orig.substring(1)
+		const newPath =
+			orig.split('/').slice(0, -1).join('/').substring(1) + `/${++i}.jpg`
+		if (newPath !== oldPath) {
+			fs.renameSync(oldPath, newPath)
+			const path = '/' + newPath
+			return path
+		}
+		return orig
 	})
 
 	const AllAlbumsJSON = fs.readFileSync('public/data/albums.json', 'utf-8')

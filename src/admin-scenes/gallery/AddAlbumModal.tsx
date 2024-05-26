@@ -68,7 +68,7 @@ const AddAlbumModal = ({
 		}
 
 		let formData = new FormData()
-		formData.append('path', `public/img/gallery/${albumName}`)
+		formData.append('path', `upload/gallery/${albumName}`)
 		axios
 			.post('/api/admin/cancelAddingNewProduct', formData, {
 				headers: {

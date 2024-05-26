@@ -37,15 +37,20 @@ export const ConsultationModal = ({
 		defaultValues: {
 			username: '',
 			phone: '',
+			theme: data,
 		},
 	})
 	const router = useRouter()
 
 	const onSubmit = (data: any) => {
-		const output = {
-			...data,
-		}
-		axios.post('', JSON.stringify(output))
+		// const output = {
+		// 	...data,
+		// }
+		axios.post(`${process.env.domainUrl}/api/mail`, data, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
+		})
 	}
 
 	return (

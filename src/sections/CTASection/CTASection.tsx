@@ -21,12 +21,13 @@ export const CTASection = ({ className, heading, bg }: CustomProjectProps) => {
 		defaultValues: {
 			username: '',
 			phone: '',
+			theme: 'Консультация',
 		},
 	})
 	const router = useRouter()
 	const onSubmit = (data: any) => {
 		axios
-			.post('./mail/send.php', data)
+			.post(`${process.env.domainUrl}/api/mail`, data)
 			// .then(response => router.push('/spasibo'))
 			.catch(e => console.log(e))
 	}

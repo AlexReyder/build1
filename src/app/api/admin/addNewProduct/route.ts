@@ -12,18 +12,29 @@ export async function POST(request: Request) {
 	const slug = require('slug')
 	newProduct.slug = slug(newProduct.name)
 
-	// newProduct.images.originals.forEach((orig: string[], i: number) => {
-	// 	const newPath = orig[0].split('/').slice(0, -1).join('/') + `/${++i}.jpg`
-	// 	fs.renameSync(orig[0], newPath)
-	// 	orig[0] = newPath
-	// })
+	// if (delItems === 'true') {
+	newProduct.images.originals.forEach((orig: string[], i: number) => {
+		const oldPath = orig[0].substring(1)
+		const newPath =
+			orig[0].split('/').slice(0, -1).join('/').substring(1) + `/${++i}.jpg`
+		if (newPath !== oldPath) {
+			fs.renameSync(oldPath, newPath)
+			orig[0] = '/' + newPath
+		}
+	})
 
-	// newProduct.images.previews.forEach((prev: string[], i: number) => {
-	// 	const newPath = prev[0].split('/').slice(0, -1).join('/') + `/${++i}.jpg`
-
-	// 	fs.renameSync(prev[0], newPath)
-	// 	prev[0] = newPath
-	// })
+	newProduct.images.previews.forEach((prev: string[], i: number) => {
+		const oldPath = prev[0].substring(1)
+		const newPath =
+			prev[0].split('/').slice(0, -1).join('/').substring(1) + `/${++i}.jpg`
+		if (newPath !== oldPath) {
+			fs.renameSync(oldPath, newPath)
+			prev[0] = '/' + newPath
+		}
+	})
+	// }
+	// const newImages = [newOrigs, newPrevs]
+	// newProduct.images = newImages
 
 	const products = JSON.parse(AllProductsJSON)
 	products.push(newProduct)

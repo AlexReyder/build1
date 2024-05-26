@@ -475,14 +475,7 @@ const EditPalettesModal = ({
 					{productImages.previews.map((item, i) => (
 						<div key={item} className='product-image'>
 							<img
-								src={
-									'/' +
-									item
-										.toString()
-										.split('/')
-										.filter(el => el !== 'public')
-										.join('/')
-								}
+								src={item}
 								width={120}
 								height={120}
 								alt='Продукция'

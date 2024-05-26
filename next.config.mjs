@@ -5,7 +5,9 @@ const nextConfig = {
 		formats: ['image/avif', 'image/webp'],
 	},
 	env: {
-		domainUrl: process.env.DOMAIN, // pulls from .env file
+		domainUrl: process.env.DOMAIN,
+		emailUser: process.env.EMAIL_LOGIN,
+		emailPass: process.env.EMAIL_PASS,
 	},
 	// cacheBust: true,
 	typescript: {

@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 	const bytesOriginal = await original.arrayBuffer()
 	const bufferOriginal = Buffer.from(bytesOriginal)
 
-	const directoryPath = `public/img/gallery/${name}`
+	const directoryPath = `upload/gallery/${name}`
 
 	if (!fs.existsSync(directoryPath)) {
 		fs.mkdirSync(directoryPath)
@@ -24,12 +24,7 @@ export async function POST(request: Request) {
 	const pathOriginal = directoryPath + `/${innerId}.jpg`
 
 	writeFile(pathOriginal, bufferOriginal)
-	const path =
-		'/' +
-		pathOriginal
-			.split('/')
-			.filter(el => el !== 'public')
-			.join('/')
+	const path = '/' + pathOriginal
 
 	const res = [path]
 

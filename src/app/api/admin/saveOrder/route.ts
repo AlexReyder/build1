@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 			const productType = item.type
 			const productName = item.name
 
-			fs.rmSync(`public/img/products/${productType}/${productName}`, {
+			fs.rmSync(`upload/products/${productType}/${productName}`, {
 				recursive: true,
 				force: true,
 			})
