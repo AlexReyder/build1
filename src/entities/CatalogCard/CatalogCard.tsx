@@ -52,13 +52,16 @@ const CatalogCard = ({ className, item }) => {
 		<>
 			<div className={cn(styles.card, className)} aria-hidden='true'>
 				<div className={styles.preview}>
-					<img src={imageList.main} alt='Card' fill />
+					<img src={imageList.main} alt='Card' className={styles.main_image} />
 					<div className={styles.control}>
 						<div className={styles.category}>{item?.name}</div>
 					</div>
 				</div>
 				<div className={styles.small_previews}>
 					{imageList.preview.map((img: string, i: number) => {
+						if (i >= 4) {
+							return null
+						}
 						return (
 							<button
 								className={styles.small__wrapper}
@@ -68,7 +71,7 @@ const CatalogCard = ({ className, item }) => {
 								<img
 									src={img[0]}
 									// height={100}
-									fill
+
 									alt={item.name}
 									loading='lazy'
 									className={styles.small_preview}

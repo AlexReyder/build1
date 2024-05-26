@@ -43,7 +43,13 @@
 .small_previews {
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 1rem;
+}
+.small_preview {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 
 .small__wrapper {

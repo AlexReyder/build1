@@ -12,7 +12,6 @@ import cls from './page.module.css'
 export default function Home() {
 	return (
 		<main>
-			<img src='upload/1.jpg' alt='' />
 			<Header />
 			<HeroSection />
 			<CatalogSection type='TP' heading='Тротуарная плитка' />

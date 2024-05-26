@@ -1,12 +1,11 @@
 // import {useState} from 'react';
 // import {Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container, Alert} from "@mui/material";
 // import axios from "axios";
-// import { useNavigate  } from 'react-router-dom';
 // export default function LoginAdmin({handleLog}) {
 //   const [authError, setAuthError] = useState(false);
 //   const [resetPassAlert, setResetPassAlert] = useState(false);
 //   const [resetPassFailAlert, setResetPassFailAlert] = useState(false);
-//   const navigate = useNavigate();
+
 //   const handleSubmit = (event) => {
 //     event.preventDefault();
 //     const data = new FormData(event.currentTarget);
@@ -20,7 +19,7 @@
 //               if(res.data){
 //                 handleLog();
 //                 setAuthError(false);
-//                 navigate('/admin/palettes');
+
 //               } else {
 //                 setAuthError(true);
 //               }

@@ -9,14 +9,16 @@ export async function POST(request: Request) {
 
 	const username = `<p>Имя: ${user}</p>`
 	const userphone = `<p>Номер телефона: ${phone}</p>`
-	const usertheme = `Тема обращения: <p>${theme}</p>`
+	const usertheme = `<p>Тема обращения: ${theme}</p>`
 
 	const nodemailer = require('nodemailer')
 
 	const transporter = nodemailer.createTransport({
-		host: 'ssl://smtp.beget.com',
-		port: 465,
-		secure: true,
+		// host: 'ssl://smtp.beget.com',
+		host: 'smtp.beget.com',
+		port: 2525,
+		// port: 465,
+		// secure: true,
 		auth: {
 			user: process.env.emailUser,
 			pass: process.env.emailPass,
@@ -45,8 +47,6 @@ export async function POST(request: Request) {
 	transporter.sendMail(mailOptions, function (error: any, info: any) {
 		if (error) {
 			console.log(error)
-		} else {
-			console.log('Email sent: ' + info.response)
 		}
 	})
 

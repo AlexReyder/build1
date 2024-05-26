@@ -203,6 +203,11 @@
 	position: relative;
 	z-index: 2;
 }
+.small_preview {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
 
 .small__wrapper {
 	position: relative;
@@ -223,4 +228,10 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.main_image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }

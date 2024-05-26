@@ -39,13 +39,7 @@ const CatalogEntity = data => {
 							height='1440'
 						>
 							{({ ref, open }) => (
-								<img
-									ref={ref}
-									onClick={open}
-									src={imageList.main}
-									alt='Card'
-									fill
-								/>
+								<img ref={ref} onClick={open} src={imageList.main} alt='Card' />
 							)}
 						</Item>
 					</div>
@@ -54,7 +48,7 @@ const CatalogEntity = data => {
 							return (
 								<button className={cls.small__wrapper} key={`iis${i}`}>
 									<Item
-										original={`/${data.data.images.originals[++i][0]}`}
+										original={`${data.data.images.originals[++i][0]}`}
 										width='1920'
 										height='1440'
 									>
@@ -62,8 +56,6 @@ const CatalogEntity = data => {
 											<img
 												ref={ref}
 												src={img[0]}
-												// height={100}
-												fill
 												alt={data.data.name}
 												loading='lazy'
 												className={cls.small_preview}
