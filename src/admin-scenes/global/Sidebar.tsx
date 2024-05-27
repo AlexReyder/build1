@@ -1,9 +1,10 @@
 'use client'
 import CollectionsIcon from '@mui/icons-material/Collections'
+import PriceIcon from '@mui/icons-material/CurrencyRuble'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
-import GroupIcon from '@mui/icons-material/Group'
 import LogoutIcon from '@mui/icons-material/Logout'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
+import HeroIcon from '@mui/icons-material/Slideshow'
 import VpnKeyIcon from '@mui/icons-material/VpnKey'
 import { Box, IconButton, Typography } from '@mui/material'
 import axios from 'axios'
@@ -45,6 +46,7 @@ const SidebarEl = () => {
 			window.location.replace('https://simter-st.ru/')
 		})
 	}
+
 	return (
 		<Box
 			className={`sidebar__wrapper ${
@@ -102,16 +104,6 @@ const SidebarEl = () => {
 
 					{!isCollapsed && (
 						<Box mb='25px' className='sidebar__admin-title'>
-							<Box display='flex' justifyContent='center' alignItems='center'>
-								<img
-									alt='profile-user'
-									width={'100px'}
-									height={'100px'}
-									src={`https://simter-st.ru/assets/img/favicon/192.png`}
-									style={{ cursor: 'pointer', borderRadius: '50%' }}
-								/>
-							</Box>
-
 							<Box textAlign='center'>
 								<Typography
 									variant='h3'
@@ -144,14 +136,29 @@ const SidebarEl = () => {
 							selected={selected}
 							setSelected={setSelected}
 						/>
-
 						<Item
-							title='Заявки'
-							to='/admin/contacts'
-							icon={<GroupIcon />}
+							title='Главный экран'
+							to='/admin/hero'
+							icon={<HeroIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
+
+						<Item
+							title='Прайс-лист'
+							to='/admin/price'
+							icon={<PriceIcon />}
+							selected={selected}
+							setSelected={setSelected}
+						/>
+
+						{/* <Item
+								title='Заявки'
+								to='/admin/contacts'
+								icon={<GroupIcon />}
+								selected={selected}
+								setSelected={setSelected}
+							/> */}
 
 						<Item
 							title='Профиль'

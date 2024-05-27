@@ -1,4 +1,4 @@
-import AdminProducts from '@/admin-scenes/product/AdminProducts'
-export default function AdminLogin() {
-	return <AdminProducts />
+import LoginAdmin from '@/admin-scenes/logIn/LoginAdmin'
+export default function LoginAdm() {
+	return <LoginAdmin />
 }

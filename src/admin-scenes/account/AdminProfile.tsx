@@ -12,7 +12,7 @@ const AdminProfile = () => {
 		event.preventDefault()
 		const data = new FormData(event.currentTarget)
 		axios
-			.post('/auth/changepass', data, {
+			.post('/api/auth/reset', data, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},

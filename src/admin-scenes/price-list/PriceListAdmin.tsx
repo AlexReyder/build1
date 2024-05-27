@@ -2,7 +2,7 @@
 
 import Header from '@/admin-scenes/Header'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
-import { Box } from '@mui/material'
+import { Box, Button, CircularProgress } from '@mui/material'
 import axios from 'axios'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -18,14 +18,14 @@ const PriceListAdmin = () => {
 					Expires: '0',
 				},
 			}).then(res => {
-				console.log(res.data)
+				setIsLinkReady(true)
 			})
 			// setIsLinkReady(result.data)
 		}
 		fetchData()
 	}, [])
 
-	const [isLinkReady, setIsLinkReady] = useState<string | null>(null)
+	const [isLinkReady, setIsLinkReady] = useState<boolean>(false)
 
 	return (
 		<Box>
@@ -34,10 +34,36 @@ const PriceListAdmin = () => {
 				subtitle='Скачивание актуального прайс-листа'
 			/>
 			<Box m='40px 0 0 10px' height='75vh'>
-				<Link href='' className='download-price'>
-					<FileDownloadIcon />
-					<span>Скачать прайс-лист</span>
-				</Link>
+				{isLinkReady ? (
+					<Link
+						href='/upload/pricelist/price.png'
+						className='download-price'
+						target='_blank'
+						locale={false}
+						download
+					>
+						<FileDownloadIcon />
+						<span>Скачать прайс-лист</span>
+					</Link>
+				) : (
+					<Button
+						variant='contained'
+						size='large'
+						startIcon={
+							<CircularProgress
+								style={{ color: '#fff', marginRight: '10px' }}
+							/>
+						}
+						sx={{
+							mt: 3,
+							mb: 2,
+							mr: 2,
+							backgroundColor: 'var(--color-primary)',
+						}}
+					>
+						<span>Генерация прайса</span>
+					</Button>
+				)}
 			</Box>
 		</Box>
 	)

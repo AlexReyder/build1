@@ -137,7 +137,7 @@ const AddAlbumModal = ({
 					<TextField
 						margin='normal'
 						required
-						label='Название продукции'
+						label='Название альбома'
 						type='text'
 						sx={{ width: '50%' }}
 						value={albumName}
@@ -152,7 +152,7 @@ const AddAlbumModal = ({
 								src={item}
 								width={120}
 								height={120}
-								alt='Продукция'
+								alt='Альбом'
 								loading='lazy'
 							/>
 							<button

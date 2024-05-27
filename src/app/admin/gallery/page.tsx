@@ -1,5 +1,8 @@
+'use client'
 import AdminAlbums from '@/admin-scenes/gallery/AdminAlbums'
+import isAuth from '@/admin-scenes/isAuth '
 
-export default function GalleryAdnun() {
+const GalleryAdnun = () => {
 	return <AdminAlbums />
 }
+export default isAuth(GalleryAdnun)

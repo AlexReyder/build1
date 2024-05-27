@@ -1,4 +1,8 @@
+'use client'
+import isAuth from '@/admin-scenes/isAuth '
+
 import AdminProfile from '@/admin-scenes/account/AdminProfile'
-export default function Profile() {
+const Profile = () => {
 	return <AdminProfile />
 }
+export default isAuth(Profile)

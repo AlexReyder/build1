@@ -1,13 +1,10 @@
+'use client'
+import { isAuthenticated } from '@/admin-scenes/Auth'
 import theme from '@/admin-scenes/theme'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { ThemeProvider } from '@mui/material/styles'
-import { Metadata } from 'next'
 import Sidebar from '../../admin-scenes/global/Sidebar'
 import './style.css'
-
-export const metadata: Metadata = {
-	title: 'Панель администратора',
-}
 
 export default function AdminLayout({
 	children,
@@ -18,7 +15,8 @@ export default function AdminLayout({
 		<AppRouterCacheProvider>
 			<ThemeProvider theme={theme}>
 				<div className='app'>
-					<Sidebar />
+					{isAuthenticated ? <Sidebar /> : null}
+					{/* <Sidebar /> */}
 					<main className='content'>{children}</main>
 				</div>
 			</ThemeProvider>

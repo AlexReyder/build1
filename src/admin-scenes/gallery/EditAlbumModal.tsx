@@ -171,7 +171,7 @@ const EditAlbumModal = ({
 					<TextField
 						margin='normal'
 						required
-						label='Название продукции'
+						label='Название альбома'
 						type='text'
 						sx={{ width: '50%' }}
 						value={productName}
@@ -187,7 +187,7 @@ const EditAlbumModal = ({
 								src={item}
 								width={120}
 								height={120}
-								alt='Продукция'
+								alt='Альбом'
 								loading='lazy'
 							/>
 							<button
