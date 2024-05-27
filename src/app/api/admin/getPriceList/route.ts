@@ -291,10 +291,10 @@ export async function GET(request: Request) {
 	// })
 	await page.setContent(html)
 	const take = await page.$('.product')
-	await take.screenshot({
-		path: 'public/pricelist/price.png',
-		omitBackground: true,
-	})
+	// await take.screenshot({
+	// 	path: 'public/pricelist/price.png',
+	// 	omitBackground: true,
+	// })
 	// await page.goto(`file://public/pricelist.html`)
 	await page.setViewport({ width: 1920, height: 1080 })
 
