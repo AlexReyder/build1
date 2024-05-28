@@ -85,6 +85,7 @@ body {
 	font-size: 16px;
 	line-height: 1.6;
 	font-weight: 400;
+	overflow-y: scroll;
 }
 
 a {

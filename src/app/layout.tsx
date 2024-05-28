@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='ru'>
-			<body className={onest.className}>{children}</body>
+			<body className={onest.className} style={{ overflow: 'auto' }}>
+				{children}
+			</body>
 		</html>
 	)
 }
