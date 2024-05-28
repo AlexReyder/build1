@@ -31,13 +31,17 @@ export async function GET(request: Request) {
 		if (i >= 14) {
 			htmlProducts2 += `
 			<div class="product">
-			<img src="${process.env.domainUrl}/${product.images.originals[0]}" alt="" class="product__img" />
+			<img src="${process.env.domainUrl}/${
+				product.images.originals[0]
+			}" alt="" class="product__img" />
 			<p class="product__price">
 				<span class="number">${product.price}</span>
 				руб/кв.м
 			</p>
 			<div class="product__info">
-				<p class=" small">"${product.name}"</p>
+				<p class="product__name ${product.name.length > 13 ? 'small' : ''}">"${
+				product.name
+			}"</p>
 				<p class="product__size">${product.size} мм</p>
 				<p class="product__pallet">${product.pallet} шт/кв.м</p>
 			</div>
@@ -88,9 +92,7 @@ export async function GET(request: Request) {
 				font-weight: 400;
 				background-color: #fff;
 			}
-			.small {
-				font-size:16px !important;
-			}
+
 
 			.main {
 				display: flex;
@@ -196,6 +198,9 @@ export async function GET(request: Request) {
 				font-size: 28px;
 				line-height: 1;
 				display: block;
+			}
+			.small {
+				font-size:15px;
 			}
 
 			.fixes {
