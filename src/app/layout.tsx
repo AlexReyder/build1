@@ -10,7 +10,8 @@ const onest = Onest({
 
 export const metadata: Metadata = {
 	title: 'Тротуарная плитка',
-	description: '  ',
+	description:
+		'Производство и продажа тротуарной, фасадной плитки, бордюров в Перми и Пермском крае.',
 }
 
 export default function RootLayout({
