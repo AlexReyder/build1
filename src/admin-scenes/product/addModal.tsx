@@ -174,7 +174,7 @@ const AddingPalettesModal = ({
 			return
 		}
 
-		if (deletedImages.length !== 0) {
+		if (deletedImages.length > 2 || productImages.originals.length > 1) {
 			let formData = new FormData()
 			const deleted = deletedImages as unknown as string | Blob
 			formData.append('delete', JSON.stringify(deleted))

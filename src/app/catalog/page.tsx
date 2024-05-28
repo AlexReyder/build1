@@ -374,8 +374,8 @@ export default function Catalog() {
 								</div>
 								<div className={cls.list}>
 									{
-										filteredProduct?.length
-											? filteredProduct?.map(product => (
+										filteredProduct.length > 0
+											? filteredProduct.map(product => (
 													<CatalogCard
 														className={cls.card}
 														item={product}

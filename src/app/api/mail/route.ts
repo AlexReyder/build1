@@ -14,11 +14,9 @@ export async function POST(request: Request) {
 	const nodemailer = require('nodemailer')
 
 	const transporter = nodemailer.createTransport({
-		// host: 'ssl://smtp.beget.com',
-		host: 'smtp.beget.com',
-		port: 2525,
-		// port: 465,
-		// secure: true,
+		host: 'ssl://smtp.beget.com',
+		port: 465,
+		secure: true,
 		auth: {
 			user: process.env.emailUser,
 			pass: process.env.emailPass,
