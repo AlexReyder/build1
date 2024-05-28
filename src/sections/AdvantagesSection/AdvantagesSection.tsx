@@ -3,7 +3,6 @@ import { Section } from '@/shared/ui/Layout/Section/Section'
 import cls from './AdvantagesSection.module.scss'
 
 import Assortment from '../../../public/img/advantages/assortment.png'
-import Equipment from '../../../public/img/advantages/equipment.png'
 import Guarantee from '../../../public/img/advantages/guarantee.png'
 import Price from '../../../public/img/advantages/price.png'
 import Quality from '../../../public/img/advantages/quality.png'
@@ -19,16 +18,10 @@ export const AdvantagesSection = () => {
 				<Headings title='Наши преимущества' />
 				<div className={cls.Adventages}>
 					<AboutAdventages
-						img={Equipment.src}
-						title='Современное оборудование'
-						text='Наше производство оснащено самым
-					передовым оборудованием.'
-					/>
-					<AboutAdventages
 						img={Guarantee.src}
 						title='Гарантия на продукцию'
 						text='На всю выпускаемую продукцию мы
-					предоставляем 5 лет гарантии.'
+					предоставляем 1 год гарантии.'
 					/>
 					<AboutAdventages
 						img={Assortment.src}

@@ -57,6 +57,7 @@ export const CTASection = ({ className, heading, bg }: CustomProjectProps) => {
 								control={control}
 								render={({ field }) => (
 									<ModalInput
+										className={cls.NewInput}
 										placeholder='Ваше имя'
 										{...field}
 										// className={cls.ModalInput}

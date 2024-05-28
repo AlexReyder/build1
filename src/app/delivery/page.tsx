@@ -3,6 +3,7 @@ import { DeliverySection } from '@/sections/DeliverySection/DeliverySection'
 import Breadcrumb from '@/widgets/Breadcrumb/Breadcrumb'
 import { Footer } from '@/widgets/Footer'
 import { Header } from '@/widgets/Header'
+import DeliveryPhotosSection from '../../sections/DeliveryPhotosSection/DeliveryPhotosSection'
 import cls from './delivery.module.scss'
 
 export default function About() {
@@ -11,6 +12,7 @@ export default function About() {
 			<Header />
 			<Breadcrumb currentPage='Доставка' />
 			<DeliverySection classContainer={cls.AboutContainer} />
+			<DeliveryPhotosSection />
 			<Footer />
 		</main>
 	)

@@ -16,6 +16,7 @@ import Link from 'next/link'
 import './sidebar.css'
 
 interface ItemPropsI {
+	ftg: any
 	title: string
 	to: string
 	icon: ReactNode
@@ -23,12 +24,15 @@ interface ItemPropsI {
 	setSelected: (title: any) => void
 }
 
-const Item = ({ title, to, icon, selected, setSelected }: ItemPropsI) => {
+const Item = ({ title, to, icon, selected, ftg, setSelected }: ItemPropsI) => {
 	return (
 		<MenuItem
 			active={selected === title}
 			style={{ color: colors.grey[100] }}
-			onClick={() => setSelected(title)}
+			onClick={() => {
+				setSelected(title)
+				ftg()
+			}}
 			icon={icon}
 			component={<Link href={to} />}
 		>
@@ -40,6 +44,14 @@ const Item = ({ title, to, icon, selected, setSelected }: ItemPropsI) => {
 const SidebarEl = () => {
 	const [isCollapsed, setIsCollapsed] = useState(false)
 	const [selected, setSelected] = useState('Продукция')
+	const [broken, setBroken] = useState(
+		window.matchMedia('(max-width: 900px)').matches
+	)
+	const [toggled, setToggled] = useState(false)
+
+	const handleCloseToggle = () => {
+		setToggled(false)
+	}
 
 	const handleLogOut = () => {
 		axios('/auth/logout').then(res => {
@@ -70,10 +82,17 @@ const SidebarEl = () => {
 				},
 			}}
 		>
+			<button className='toggle-button' onClick={() => setToggled(true)}>
+				Меню
+			</button>
 			<Sidebar
 				collapsed={isCollapsed}
 				width='300px'
 				className={`sidebar ${isCollapsed ? 'sidebar--collapsed' : null}`}
+				customBreakPoint='800px'
+				onBreakPoint={setBroken}
+				toggled={toggled}
+				onBackdropClick={() => setToggled(false)}
 			>
 				<Menu className='sidebar--exit'>
 					<MenuItem
@@ -127,6 +146,7 @@ const SidebarEl = () => {
 							icon={<DashboardCustomizeIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 
 						<Item
@@ -135,6 +155,7 @@ const SidebarEl = () => {
 							icon={<CollectionsIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 						<Item
 							title='Главный экран'
@@ -142,6 +163,7 @@ const SidebarEl = () => {
 							icon={<HeroIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 
 						<Item
@@ -150,6 +172,7 @@ const SidebarEl = () => {
 							icon={<PriceIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 
 						{/* <Item
@@ -166,6 +189,7 @@ const SidebarEl = () => {
 							icon={<VpnKeyIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 
 						<Item
@@ -174,6 +198,7 @@ const SidebarEl = () => {
 							icon={<LogoutIcon />}
 							selected={selected}
 							setSelected={setSelected}
+							ftg={handleCloseToggle}
 						/>
 					</Box>
 				</Menu>

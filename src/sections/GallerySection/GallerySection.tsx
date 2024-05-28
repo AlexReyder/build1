@@ -29,7 +29,18 @@ export const GallerySection = () => {
 
 	const config = {
 		spaceBetween: 20,
-		slidesPerView: 1,
+		slidesPerView: 3,
+		breakpoints: {
+			280: {
+				slidesPerView: 1,
+			},
+			420: {
+				slidesPerView: 2,
+			},
+			600: {
+				slidesPerView: 3,
+			},
+		},
 	}
 
 	return (

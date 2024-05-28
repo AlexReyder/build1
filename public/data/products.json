@@ -1,1 +1,170 @@
-[{"id":1,"type":"TP","name":"Антик","price":"1200","priceColor":"1233","description":"123123","size":"300*300*60","pallet":"10","colors":{"grey":true,"black":false,"yellow":false,"red":false,"brown":false,"blue":false},"images":{"originals":[["/upload/products/TP/Антик/1.jpg"]],"previews":[["/upload/products/TP/Антик/previews/1.jpg"]]},"slug":"antik"},{"id":2,"type":"TP","name":"8 кирпичей","price":"1400","priceColor":"12123","description":"123","size":"300*300*60","pallet":"10","colors":{"grey":true,"black":false,"yellow":false,"red":false,"brown":false,"blue":false},"images":{"originals":[["/upload/products/TP/8 кирпичей/1.jpg"]],"previews":[["/upload/products/TP/8 кирпичей/previews/1.jpg"]]},"slug":"8-kirpichej"},{"id":3,"type":"TP","name":"Волна","price":"1500","priceColor":"123","description":"123","size":"300*300*40","pallet":"11","colors":{"grey":true,"black":false,"yellow":false,"red":false,"brown":false,"blue":false},"images":{"originals":[["/upload/products/TP/Волна/1.jpg"]],"previews":[["/upload/products/TP/Волна/previews/1.jpg"]]},"slug":"volna"},{"id":4,"type":"TP","name":"Готика","price":"1300","priceColor":"1500","description":"1233","size":"300*200*40","pallet":"12","colors":{"grey":true,"black":false,"yellow":false,"red":false,"brown":false,"blue":false},"images":{"originals":[["/upload/products/TP/Готика/1.jpg"]],"previews":[["/upload/products/TP/Готика/previews/1.jpg"]]},"slug":"gotika"},{"id":5,"type":"TP","name":"Галька","price":"1200","priceColor":"1400","description":"123","size":"300*400*20","pallet":"12","colors":{"grey":true,"black":false,"yellow":false,"red":false,"brown":false,"blue":false},"images":{"originals":[["/upload/products/TP/Галька/1.jpg"]],"previews":[["/upload/products/TP/Галька/previews/1.jpg"]]},"slug":"galka"}]
+[
+	{
+		"id": 1,
+		"type": "TP",
+		"name": "Звездочка",
+		"price": "730",
+		"priceColor": "930",
+		"description": "123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа 123123ыяфаыцвафывавыа",
+		"size": "300х300х30",
+		"pallet": "11",
+		"colors": {
+			"grey": true,
+			"black": true,
+			"yellow": true,
+			"red": true,
+			"brown": true
+		},
+		"images": {
+			"originals": [["/upload/products/TP/Звездочка/1.jpg"]],
+			"previews": [["/upload/products/TP/Звездочка/previews/1.jpg"]]
+		},
+		"slug": "zvezdochka"
+	},
+	{
+		"id": 2,
+		"type": "TP",
+		"name": "Антик",
+		"price": "1200",
+		"priceColor": "1233",
+		"description": "123123",
+		"size": "300*300*60",
+		"pallet": "10",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": false,
+			"blue": false
+		},
+		"images": {
+			"originals": [["/upload/products/TP/Антик/1.jpg"]],
+			"previews": [["/upload/products/TP/Антик/previews/1.jpg"]]
+		},
+		"slug": "antik"
+	},
+	{
+		"id": 3,
+		"type": "TP",
+		"name": "8 кирпичей",
+		"price": "1400",
+		"priceColor": "12123",
+		"description": "123",
+		"size": "300*300*60",
+		"pallet": "10",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": false,
+			"blue": false
+		},
+		"images": {
+			"originals": [["/upload/products/TP/8 кирпичей/1.jpg"]],
+			"previews": [["/upload/products/TP/8 кирпичей/previews/1.jpg"]]
+		},
+		"slug": "8-kirpichej"
+	},
+	{
+		"id": 4,
+		"type": "TP",
+		"name": "Волна",
+		"price": "1500",
+		"priceColor": "123",
+		"description": "123",
+		"size": "300*300*40",
+		"pallet": "11",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": false,
+			"blue": false
+		},
+		"images": {
+			"originals": [["/upload/products/TP/Волна/1.jpg"]],
+			"previews": [["/upload/products/TP/Волна/previews/1.jpg"]]
+		},
+		"slug": "volna"
+	},
+	{
+		"id": 5,
+		"type": "TP",
+		"name": "Готика",
+		"price": "1300",
+		"priceColor": "1500",
+		"description": "1233",
+		"size": "300*200*40",
+		"pallet": "12",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": false,
+			"blue": false
+		},
+		"images": {
+			"originals": [["/upload/products/TP/Готика/1.jpg"]],
+			"previews": [["/upload/products/TP/Готика/previews/1.jpg"]]
+		},
+		"slug": "gotika"
+	},
+	{
+		"id": 6,
+		"type": "TP",
+		"name": "Галька",
+		"price": "1200",
+		"priceColor": "1400",
+		"description": "123",
+		"size": "300*400*20",
+		"pallet": "12",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": false,
+			"blue": false
+		},
+		"images": {
+			"originals": [["/upload/products/TP/Галька/1.jpg"]],
+			"previews": [["/upload/products/TP/Галька/previews/1.jpg"]]
+		},
+		"slug": "galka"
+	},
+	{
+		"id": 7,
+		"type": "TP",
+		"name": "123",
+		"price": "123",
+		"priceColor": "123",
+		"description": "123",
+		"size": "123",
+		"pallet": "123",
+		"colors": {
+			"grey": true,
+			"black": false,
+			"yellow": false,
+			"red": false,
+			"brown": true,
+			"blue": false
+		},
+		"images": {
+			"originals": [
+				["/upload/products/TP/123/1.jpg"],
+				["/upload/products/TP/123/2.jpg"],
+				["/upload/products/TP/123/3.jpg"]
+			],
+			"previews": [
+				["/upload/products/TP/123/previews/1.jpg"],
+				["/upload/products/TP/123/previews/2.jpg"],
+				["/upload/products/TP/123/previews/3.jpg"]
+			]
+		},
+		"slug": "123"
+	}
+]

@@ -89,7 +89,6 @@ const EditPalettesModal = ({
 		yellow: false,
 		red: false,
 		brown: false,
-		blue: false,
 	})
 	const [productImages, setProductImages] = useState<productImagesI>({
 		originals: [],
@@ -276,7 +275,6 @@ const EditPalettesModal = ({
 			yellow: false,
 			red: false,
 			brown: false,
-			blue: false,
 		})
 		setProductImages({
 			originals: [],
@@ -448,16 +446,6 @@ const EditPalettesModal = ({
 								label='Красный'
 							/>
 
-							<FormControlLabel
-								control={
-									<Checkbox
-										checked={productColors.blue}
-										onChange={handleChangeProductColors}
-										name='blue'
-									/>
-								}
-								label='Синий'
-							/>
 							<FormControlLabel
 								control={
 									<Checkbox

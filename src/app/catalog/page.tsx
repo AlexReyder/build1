@@ -53,7 +53,6 @@ export default function Catalog() {
 		yellow: false,
 		red: false,
 		brown: false,
-		blue: false,
 	})
 	const [sizes, setSizes] = useState<productSizesI[]>([])
 	const [filteredProduct, setFilteredProduct] = useState<productItemI[]>([])
@@ -306,21 +305,6 @@ export default function Catalog() {
 												role='switch'
 												aria-checked='false'
 												checked={colors.red}
-												onChange={handleInputColorsChange}
-											/>
-										</label>
-										<label
-											className={`${cls.colorsLabel} ${cls.colorsLabel__blue}
-											${colors.blue ? cls.colorsChecked : null}`}
-										>
-											<input
-												className={cls.colorsInput}
-												aria-label='blue'
-												name='blue'
-												type='checkbox'
-												role='switch'
-												aria-checked='false'
-												checked={colors.blue}
 												onChange={handleInputColorsChange}
 											/>
 										</label>

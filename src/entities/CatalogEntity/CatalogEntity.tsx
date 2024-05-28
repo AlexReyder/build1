@@ -73,11 +73,6 @@ const CatalogEntity = data => {
 					<div className={cls.properties}>
 						<p className={cls.size}>Размер, мм: {data.data.size}</p>
 						<p className={cls.pallet}>На поддоне: {data.data.pallet}</p>
-						{data.data.description ? (
-							<p className={cls.description}>
-								Описание: {data.data.description}
-							</p>
-						) : null}
 					</div>
 					<div className={cls.price__wrapper}>
 						<p className={cls.price}>
@@ -115,6 +110,13 @@ const CatalogEntity = data => {
 					</div>
 				</div>
 			</div>
+			{data.data.description ? (
+				<div className={cls.DescriptionBlock}>
+					<h3 className={cls.DescriptionTitle}>Описание: </h3>
+					<p className={cls.description}>{data.data.description}</p>
+				</div>
+			) : null}
+
 			<ConsultationModal
 				heading='Сделать заказ'
 				isOpen={isModalConsultOpen}

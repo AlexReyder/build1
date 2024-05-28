@@ -18,7 +18,6 @@ export default function LoginAdmin() {
 	const [authError, setAuthError] = useState(false)
 	const [resetPassAlert, setResetPassAlert] = useState(false)
 	const [resetPassFailAlert, setResetPassFailAlert] = useState(false)
-	const [isAuth, setIsAuth] = useState(false)
 
 	const router = useRouter()
 	const handleSubmit = event => {
@@ -33,28 +32,16 @@ export default function LoginAdmin() {
 			})
 			.then(res => {
 				if (res.data) {
-					setCookie('isAuthenticated', true)
+					setCookie('isAuthenticated', true, { maxAge: 60 * 6 * 24 })
 					setAuthError(false)
-					setIsAuth(true)
 					window.location.href = '/admin/add'
 				} else {
-					localStorage.setItem('isAuthenticated', 'false')
+					// localStorage.setItem('isAuthenticated', 'false')
 					setAuthError(true)
 				}
 			})
 	}
 
-	const handleResetPassword = e => {
-		e.preventDefault()
-		axios('/auth/resetpass')
-			.then(res => {
-				setResetPassAlert(true)
-			})
-			.catch(e => {
-				console.log(e)
-				setResetPassFailAlert(true)
-			})
-	}
 	return (
 		<Container component='main' maxWidth='xs'>
 			<Box

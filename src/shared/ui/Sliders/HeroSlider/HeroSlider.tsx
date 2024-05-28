@@ -1,7 +1,8 @@
 import { ConsultationModal } from '@/features/ConsultationModal'
 import { PrimaryButton } from '@/shared/ui/Buttons/PrimaryButton/PrimaryButton'
+import axios from 'axios'
 import Link from 'next/link'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Autoplay, EffectCreative, Pagination } from 'swiper/modules'
@@ -11,6 +12,23 @@ import { ShortArrowIcon } from '../../Icons/ShortArrowIcon/ShortArrowIcon'
 import cls from './HeroSlider.module.scss'
 
 export const HeroSlider = () => {
+	useEffect(() => {
+		const fetchData = async () => {
+			const products = await axios(
+				`${process.env.domainUrl}/api/admin/hero/getHero`,
+				{
+					headers: {
+						'Cache-Control': 'no-cache',
+						Pragma: 'no-cache',
+						Expires: '0',
+					},
+				}
+			)
+			setData(products.data)
+		}
+		fetchData()
+	}, [])
+	const [data, setData] = useState([])
 	const [currentSlide, setCurrentSlide] = useState(1)
 	const [slidesLength, setslidesLength] = useState(0)
 	const [isModalConsultOpen, setModalConsultOpen] = useState(false)
@@ -56,7 +74,33 @@ export const HeroSlider = () => {
 				onSwiper={swiper => setslidesLength(swiper.slides.length)}
 				onSlideChange={swiper => setCurrentSlide(swiper.activeIndex + 1)}
 			>
-				<SwiperSlide
+				{data.length > 0
+					? data.map(hero => {
+							return (
+								<SwiperSlide
+									className={cls.Slide}
+									style={{ backgroundImage: `url('${hero.images[0]}')` }}
+								>
+									<h1 className={cls.Heading}>{hero.name}</h1>
+									<h2 className={cls.Subheading}>{hero.description}</h2>
+
+									<div className={cls.ButtonsBox}>
+										<PrimaryButton
+											text='Получить консультацию'
+											icon={<OkIcon fill='white' />}
+											onClick={() => setModalConsultOpen(true)}
+										/>
+
+										<Link href='/catalog' className={cls.Link}>
+											<span>Перейти в каталог</span>
+											<ShortArrowIcon className={cls.LinkIcon} />
+										</Link>
+									</div>
+								</SwiperSlide>
+							)
+					  })
+					: null}
+				{/* <SwiperSlide
 					className={cls.Slide}
 					style={{ backgroundImage: `url(${'/img/hero/1.jpg'})` }}
 				>
@@ -80,8 +124,8 @@ export const HeroSlider = () => {
 							<ShortArrowIcon className={cls.LinkIcon} />
 						</Link>
 					</div>
-				</SwiperSlide>
-				<SwiperSlide
+				</SwiperSlide> */}
+				{/* <SwiperSlide
 					className={cls.Slide}
 					style={{ backgroundImage: `url(${'/img/hero/2.jpg'})` }}
 				>
@@ -128,7 +172,7 @@ export const HeroSlider = () => {
 							<ShortArrowIcon className={cls.LinkIcon} />
 						</Link>
 					</div>
-				</SwiperSlide>
+				</SwiperSlide> */}
 			</Swiper>
 			<ConsultationModal
 				data='Консультация'

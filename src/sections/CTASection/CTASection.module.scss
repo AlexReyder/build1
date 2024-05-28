@@ -29,7 +29,7 @@
 	padding: 6rem 6rem;
 	height: 80vh;
 	width: 100%;
-	background-color: #222;
+	background-color: #6e3700;
 	position: relative;
 	border-top-left-radius: 36px;
 	border-bottom-left-radius: 36px;
@@ -44,16 +44,16 @@
 		height: 100%;
 		background: linear-gradient(
 			to bottom right,
-			#222 51%,
-			#222 50%,
+			#6e3700 51%,
+			#6e3700 50%,
 			transparent 52%,
 			transparent 100%
 		);
 		@media only screen and (max-width: 56.25rem) {
 			background: linear-gradient(
 				to bottom right,
-				#222 50%,
-				#222 49%,
+				#6e3700 50%,
+				#6e3700 49%,
 				transparent 50%,
 				transparent 100%
 			);
@@ -129,23 +129,34 @@
 	display: contents;
 }
 
+.NewInput {
+	background-color: #fff;
+	color: #000;
+	font-weight: 500;
+	font-size: 1.8rem;
+	&::placeholder {
+		color: #000;
+		font-weight: 500;
+		font-size: 1.8rem;
+	}
+}
+
 .ModalInput {
-	background-color: transparent;
 	width: 80%;
 	padding: 1.5rem 3rem;
 	border: 3px solid #fff;
 	border-radius: 12px;
-	font-family: var(--font-family-text);
-	font-weight: 400;
-	font-size: 1.6rem;
-	color: #fff;
+
+	font-weight: 500;
+	font-size: 1.8rem;
+	background-color: #fff;
+	color: #000;
 	transition: border 0.3s;
 
 	&::placeholder {
-		font-family: var(--font-family-text);
-		font-weight: 400;
-		font-size: 1.6rem;
-		color: #fff;
+		font-weight: 500;
+		font-size: 1.8rem;
+		color: #000;
 	}
 
 	&:focus {
