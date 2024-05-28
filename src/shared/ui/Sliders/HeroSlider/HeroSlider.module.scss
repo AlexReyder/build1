@@ -62,8 +62,8 @@
 .Link {
 	font-size: 1.6rem;
 	font-weight: 500;
-	background-color: var(--color-text-white);
-	color: var(--color-text-black);
+	background-color: #6e3700;
+	color: var(--color-text-white);
 	padding: 1.5rem 3rem;
 	border-radius: 12px;
 	display: flex;
@@ -71,7 +71,7 @@
 	gap: 1rem;
 }
 .LinkIcon {
-	fill: var(--color-text-black);
+	fill: var(--color-text-white);
 }
 
 .Sw {

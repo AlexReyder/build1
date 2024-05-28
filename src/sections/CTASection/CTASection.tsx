@@ -7,6 +7,7 @@ import { Container } from '@/shared/ui/Layout/Container/Container'
 import { Section } from '@/shared/ui/Layout/Section/Section'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import cls from './CTASection.module.scss'
@@ -17,17 +18,22 @@ interface CustomProjectProps {
 }
 
 export const CTASection = ({ className, heading, bg }: CustomProjectProps) => {
-	const { control, register, handleSubmit } = useForm({
+	const { control, register, reset, handleSubmit } = useForm({
 		defaultValues: {
 			username: '',
 			phone: '',
 			theme: 'Консультация',
 		},
 	})
+	const [isSend, setIsSend] = useState('Отправить заявку')
 	const router = useRouter()
 	const onSubmit = (data: any) => {
 		axios
 			.post(`${process.env.domainUrl}/api/mail`, data)
+			.then(res => {
+				reset()
+				setIsSend('Отправлено')
+			})
 			// .then(response => router.push('/spasibo'))
 			.catch(e => console.log(e))
 	}
@@ -85,7 +91,7 @@ export const CTASection = ({ className, heading, bg }: CustomProjectProps) => {
 							/>
 							<PrimaryButton
 								icon={<OkIcon fill='#fff' />}
-								text='Отправить заявку'
+								text={isSend}
 								className={cls.Submit}
 								type='submit'
 							/>

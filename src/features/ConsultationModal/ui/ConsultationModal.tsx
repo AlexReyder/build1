@@ -4,7 +4,7 @@ import { ModalInput } from '@/shared/ui/Inputs/ModalInput/ModalInput'
 import { Modal } from '@/shared/ui/Modal'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import cls from './ConsultationModal.module.scss'
@@ -33,24 +33,30 @@ export const ConsultationModal = ({
 	data,
 	handleClose,
 }: ConsultationModalProps) => {
-	const { control, handleSubmit } = useForm({
+	const { control, handleSubmit, reset } = useForm({
 		defaultValues: {
 			username: '',
 			phone: '',
 			theme: data,
 		},
 	})
+	const [isSend, setIsSend] = useState('Отправить заявку')
 	const router = useRouter()
 
 	const onSubmit = (data: any) => {
 		// const output = {
 		// 	...data,
 		// }
-		axios.post(`${process.env.domainUrl}/api/mail`, data, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		})
+		axios
+			.post(`${process.env.domainUrl}/api/mail`, data, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
+			.then(res => {
+				reset()
+				setIsSend('Отправлено')
+			})
 	}
 
 	return (
@@ -88,7 +94,7 @@ export const ConsultationModal = ({
 					/>
 
 					<DefaultButton type='submit' className={cls.Submit}>
-						Отправить заявку
+						{isSend}
 					</DefaultButton>
 				</form>
 			</div>
