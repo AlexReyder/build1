@@ -75,11 +75,12 @@ export const HeroSlider = () => {
 				onSlideChange={swiper => setCurrentSlide(swiper.activeIndex + 1)}
 			>
 				{data.length > 0
-					? data.map(hero => {
+					? data.map((hero, i) => {
 							return (
 								<SwiperSlide
 									className={cls.Slide}
 									style={{ backgroundImage: `url('${hero.images[0]}')` }}
+									key={`adasdefd${i}`}
 								>
 									<h1 className={cls.Heading}>{hero.name}</h1>
 									<h2 className={cls.Subheading}>{hero.description}</h2>
