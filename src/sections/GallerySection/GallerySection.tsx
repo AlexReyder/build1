@@ -47,22 +47,20 @@ export const GallerySection = () => {
 		<Section id='gallery'>
 			<Container className={cls.Container}>
 				<Headings title='Галерея' />
-				{data.length > 0
-					? data.map((album: AlbumsI, i: number) => (
-							<div className={cls.Wrapper} key={`gla${i}`}>
-								<h3 className={cls.AlbumHeadings}>{album.name}</h3>
-								<ProjectGallerySlider
-									controlClass={cls.Control}
-									prevNameNavigation='Предыдущий'
-									nextNameNavigation='Следующий'
-									SwiperClass={cls.GallerySwiper}
-									SlideClass={cls.GallerySlide}
-									config={config}
-									data={album.images}
-								/>
-							</div>
-					  ))
-					: null}
+				{data.map((album: AlbumsI, i: number) => (
+					<div className={cls.Wrapper} key={`gla${i}`}>
+						<h3 className={cls.AlbumHeadings}>{album.name}</h3>
+						<ProjectGallerySlider
+							controlClass={cls.Control}
+							prevNameNavigation='Предыдущий'
+							nextNameNavigation='Следующий'
+							SwiperClass={cls.GallerySwiper}
+							SlideClass={cls.GallerySlide}
+							config={config}
+							data={album.images}
+						/>
+					</div>
+				))}
 			</Container>
 		</Section>
 	)

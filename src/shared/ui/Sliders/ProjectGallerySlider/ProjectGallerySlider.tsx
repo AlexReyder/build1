@@ -73,10 +73,11 @@ export const ProjectGallerySlider = ({
 					modules={[EffectCoverflow]}
 					{...config}
 				>
-					{data.map(src => {
+					{data.map((src, i) => {
 						return (
 							<SwiperSlide
 								className={`${cls.Slide} ${SlideClass ? SlideClass : null}`}
+								key={`asd34dsfdsf${i}`}
 							>
 								<Item
 									original={src}

@@ -16,37 +16,34 @@ export const Header = () => {
 			<nav className={cls.Nav}>
 				<ul className={cls.Nav__list}>
 					<li className={cls.Nav__item}>
-						<Link href='/'>Главная</Link>
+						<a href='/'>Главная</a>
 					</li>
 					<li className={cls.Nav__item}>
-						<Link href='/catalog'>Каталог</Link>
+						<a href='/catalog'>Каталог</a>
 					</li>
 					<li className={cls.Nav__item}>
-						<Link href='/gallery'>Галерея</Link>
+						<a href='/gallery'>Галерея</a>
 					</li>
 					<li className={cls.Nav__item}>
-						<Link href='/delivery'>Доставка</Link>
+						<a href='/delivery'>Доставка</a>
 					</li>
 					<li className={cls.Nav__item}>
-						<Link href='/about'>О компании</Link>
+						<a href='/about'>О компании</a>
 					</li>
 					<li className={cls.Nav__item}>
-						<Link href='/contacts'>Контакты</Link>
+						<a href='/contacts'>Контакты</a>
 					</li>
 				</ul>
 			</nav>
 			<div className={cls.Communicate}>
-				<Link href='tel:+79655588882' className={cls.Communicate__item}>
+				<a href='tel:+79655588882' className={cls.Communicate__item}>
 					<PhoneIcon className={cls.Icon} fill='#3C7B68' />
 					<span>+7 (965) 558-88-82</span>
-				</Link>
-				<Link
-					href='mailto:slava1700@yandex.ru'
-					className={cls.Communicate__item}
-				>
+				</a>
+				<a href='mailto:slava1700@yandex.ru' className={cls.Communicate__item}>
 					<MailIcon className={cls.Icon} fill='#3C7B68' />
 					<span>slava1700@yandex.ru</span>
-				</Link>
+				</a>
 				<Menu className={cls.Hamburger} />
 			</div>
 		</header>
