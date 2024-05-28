@@ -37,7 +37,7 @@ export async function GET(request: Request) {
 				руб/кв.м
 			</p>
 			<div class="product__info">
-				<p class="product__name">"${product.name}"</p>
+				<p class=" small">"${product.name}"</p>
 				<p class="product__size">${product.size} мм</p>
 				<p class="product__pallet">${product.pallet} шт/кв.м</p>
 			</div>
@@ -45,23 +45,7 @@ export async function GET(request: Request) {
 			`
 		}
 	}
-	// 	products.forEach((product, i) => {
-	// 		htmlProducts1 += `
-	// 	 <div class="product">
-	// 	 <img src="${process.env.domainUrl}/${product.images.originals[0]}" alt="" class="product__img" />
-	// 	 <p class="product__price">
-	// 		 <span class="number">${product.price}</span>
-	// 		 руб/кв.м
-	// 	 </p>
-	// 	 <div class="product__info">
-	// 		 <p class="product__name">"${product.name}"</p>
-	// 		 <p class="product__size">${product.size} мм</p>
-	// 		 <p class="product__pallet">${product.pallet} шт/кв.м</p>
-	// 	 </div>
-	//  </div>
 
-	// 	 `
-	// 	})
 	console.log(htmlProducts1)
 
 	const html = `
@@ -103,6 +87,9 @@ export async function GET(request: Request) {
 				line-height: 1.6;
 				font-weight: 400;
 				background-color: #fff;
+			}
+			.small {
+				font-size:16px !important;
 			}
 
 			.main {
@@ -298,7 +285,7 @@ export async function GET(request: Request) {
 	// 	omitBackground: true,
 	// })
 	// await page.goto(`file://public/pricelist.html`)
-	await page.setViewport({ width: 1920, height: 1080 })
+	await page.setViewport({ width: 1920, height: 39 * products.length })
 
 	await page.screenshot({ path: 'upload/pricelist/price.png' })
 

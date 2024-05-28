@@ -199,6 +199,8 @@ const AddingPalettesModal = ({
 		}
 
 		let formData = new FormData()
+		const deleteds = deletedImages as unknown as string | Blob
+		formData.append('delete', JSON.stringify(deleteds))
 		formData.append('data', JSON.stringify(data))
 
 		await axios
