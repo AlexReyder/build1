@@ -20,6 +20,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Resizer from 'react-image-file-resizer'
 import NewProduct from './NewProduct'
+import './product_styles.css'
 
 interface EditPalettesModalI {
 	open: boolean | null
@@ -213,7 +214,7 @@ const EditPalettesModal = ({
 			return
 		}
 
-		if (deletedImages.length > 2 || productImages.originals.length > 1) {
+		if (deletedImages.length > 2 && productImages.originals.length !== 0) {
 			let formData = new FormData()
 			const deleted = deletedImages as unknown as string | Blob
 			formData.append('delete', JSON.stringify(deleted))
@@ -465,7 +466,7 @@ const EditPalettesModal = ({
 					{productImages.previews.map((item, i) => (
 						<div key={item} className='product-image'>
 							<img
-								src={item}
+								src={item + `?${new Date().getTime()}`}
 								width={120}
 								height={120}
 								alt='Продукция'

@@ -1,9 +1,9 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload'
 import ErrorIcon from '@mui/icons-material/Error'
 import { CircularProgress } from '@mui/material'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import './product_styles.css'
 
 interface NewProductI {
 	defaultStatus: string

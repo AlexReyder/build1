@@ -17,8 +17,6 @@ const SortableItem = props => {
 	const style = {
 		transform: CSS.Transform.toString(transform),
 		transition,
-		width: '90%',
-		height: '90px',
 		backgroundColor: '#fff',
 		boxShadow: '0px 5px 10px 2px rgba(34, 60, 80, 0.2)',
 		margin: '10px',

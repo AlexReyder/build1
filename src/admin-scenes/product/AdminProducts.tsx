@@ -23,7 +23,7 @@ import { useEffect, useState } from 'react'
 import SortableItem from './SortableItem'
 import AddingPalettesModal from './addModal'
 import EditPalettesModal from './editModal'
-import './palettes.css'
+import './product_styles.css'
 
 const AdminProducts = () => {
 	const [activeId, setActiveId] = useState(null)
@@ -121,7 +121,7 @@ const AdminProducts = () => {
 				title='Продукция'
 				subtitle='Добавление, изменение и удаление продукции'
 			/>
-			<div className='palette__container'>
+			<div className='product__container'>
 				{items ? (
 					<SortableContext items={items} strategy={rectSortingStrategy}>
 						{items.map((item: productItemI) => (
@@ -130,7 +130,9 @@ const AdminProducts = () => {
 								id={item}
 								handle={true}
 								paletteName={item.name}
-								paletteImg={item.images.previews[0]}
+								paletteImg={
+									item.images.previews[0] + `?${new Date().getTime()}`
+								}
 								remove={() => removeItem(item.id)}
 								edit={() => handleEditModalOpen(item.id)}
 							/>
@@ -149,7 +151,7 @@ const AdminProducts = () => {
 					</SortableContext>
 				) : null}
 			</div>
-			<div className='palette__wrapper'>
+			<div className='product__wrapper'>
 				<Button
 					variant='contained'
 					size='large'

@@ -2,7 +2,6 @@ import { Container } from '@/shared/ui/Layout/Container/Container'
 import { Headings } from '@/shared/ui/Layout/Headings/Headings'
 import { Section } from '@/shared/ui/Layout/Section/Section'
 import { ArrowSlider } from '@/shared/ui/Sliders/ArrowSlider/ArrowSlider'
-import Image from 'next/image'
 import 'photoswipe/dist/photoswipe.css'
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import cls from './DeliveryPhotosSection.module.scss'
@@ -45,10 +44,10 @@ const DeliveryPhotosSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/delivery/1.jpg'
-										fill
-										alt='Протокол испытания'
+										className={cls.Del}
+										alt='Доставка'
 										ref={ref}
 										onClick={open}
 									/>
@@ -63,9 +62,9 @@ const DeliveryPhotosSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/delivery/2.jpg'
-										fill
+										className={cls.Del}
 										alt='Доставка'
 										ref={ref}
 										onClick={open}
@@ -81,9 +80,9 @@ const DeliveryPhotosSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/delivery/3.jpg'
-										fill
+										className={cls.Del}
 										alt='Доставка'
 										ref={ref}
 										onClick={open}

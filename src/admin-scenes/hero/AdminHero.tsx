@@ -130,7 +130,7 @@ const AdminHero = () => {
 								id={item}
 								handle={true}
 								paletteName={item.name}
-								paletteImg={item.images[0]}
+								paletteImg={item.images[0] + `?${new Date().getTime()}`}
 								remove={() => removeItem(item.id)}
 								edit={() => handleEditModalOpen(item.id)}
 							/>

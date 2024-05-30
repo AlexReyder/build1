@@ -1,6 +1,6 @@
 .Slide {
-	aspect-ratio: 4 / 3;
-	border: 2px solid var(--color-primary);
+	// aspect-ratio: 4 / 3;
+	// border: 2px solid var(--color-primary);
 	@media only screen and (max-width: 37.5rem) {
 		padding: 4.8rem 3rem !important;
 	}
@@ -9,4 +9,9 @@
 	@media only screen and (max-width: 37.5rem) {
 		margin-bottom: 2rem;
 	}
+}
+.Del {
+	width: 100%;
+	height: auto;
+	object-fit: fill;
 }

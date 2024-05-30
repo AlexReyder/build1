@@ -18,8 +18,8 @@ import {
 import axios from 'axios'
 import React, { useState } from 'react'
 import Resizer from 'react-image-file-resizer'
-
 import NewProduct from './NewProduct'
+import './product_styles.css'
 
 interface AddingPalettesModalI {
 	open: boolean

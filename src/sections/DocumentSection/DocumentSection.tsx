@@ -2,7 +2,6 @@ import { Container } from '@/shared/ui/Layout/Container/Container'
 import { Headings } from '@/shared/ui/Layout/Headings/Headings'
 import { Section } from '@/shared/ui/Layout/Section/Section'
 import { ArrowSlider } from '@/shared/ui/Sliders/ArrowSlider/ArrowSlider'
-import Image from 'next/image'
 import 'photoswipe/dist/photoswipe.css'
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import cls from './DocumentSection.module.scss'
@@ -45,12 +44,12 @@ const DocumentSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/documents/1.jpg'
-										fill
 										alt='Протокол испытания'
 										ref={ref}
 										onClick={open}
+										className={cls.Doc}
 									/>
 								)}
 							</Item>,
@@ -63,12 +62,12 @@ const DocumentSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/documents/2.jpg'
-										fill
 										alt='Протокол испытания'
 										ref={ref}
 										onClick={open}
+										className={cls.Doc}
 									/>
 								)}
 							</Item>,
@@ -81,12 +80,12 @@ const DocumentSection = () => {
 								key={1}
 							>
 								{({ ref, open }) => (
-									<Image
+									<img
 										src='/img/documents/3.jpg'
-										fill
 										alt='Протокол испытания'
 										ref={ref}
 										onClick={open}
+										className={cls.Doc}
 									/>
 								)}
 							</Item>,
