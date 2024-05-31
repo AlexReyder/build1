@@ -36,8 +36,8 @@ const DeliveryPhotosSection = () => {
 					>
 						{[
 							<Item
-								original='/img/delivery/1.jpg'
-								thumbnail='/img/delivery/1.jpg'
+								original='/img/deliv/1.JPG'
+								thumbnail='/img/deliv/1.JPG'
 								width='1920'
 								height='1440'
 								alt='Доставка'
@@ -45,7 +45,7 @@ const DeliveryPhotosSection = () => {
 							>
 								{({ ref, open }) => (
 									<img
-										src='/img/delivery/1.jpg'
+										src='/img/deliv/1.JPG'
 										className={cls.Del}
 										alt='Доставка'
 										ref={ref}
@@ -54,8 +54,8 @@ const DeliveryPhotosSection = () => {
 								)}
 							</Item>,
 							<Item
-								original='/img/delivery/2.jpg'
-								thumbnail='/img/delivery/2.jpg'
+								original='/img/deliv/2.JPG'
+								thumbnail='/img/deliv/2.JPG'
 								width='1920'
 								height='1440'
 								alt='Доставка'
@@ -63,7 +63,7 @@ const DeliveryPhotosSection = () => {
 							>
 								{({ ref, open }) => (
 									<img
-										src='/img/delivery/2.jpg'
+										src='/img/deliv/2.JPG'
 										className={cls.Del}
 										alt='Доставка'
 										ref={ref}
@@ -72,8 +72,8 @@ const DeliveryPhotosSection = () => {
 								)}
 							</Item>,
 							<Item
-								original='/img/delivery/3.jpg'
-								thumbnail='/img/delivery/3.jpg'
+								original='/img/deliv/3.JPG'
+								thumbnail='/img/deliv/3.JPG'
 								width='1920'
 								height='1440'
 								alt='Доставка'
@@ -81,7 +81,7 @@ const DeliveryPhotosSection = () => {
 							>
 								{({ ref, open }) => (
 									<img
-										src='/img/delivery/3.jpg'
+										src='/img/deliv/3.JPG'
 										className={cls.Del}
 										alt='Доставка'
 										ref={ref}
